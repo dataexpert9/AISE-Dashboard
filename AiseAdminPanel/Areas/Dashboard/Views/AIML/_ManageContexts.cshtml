@@ -1,0 +1,39 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.ContextViewModel
+
+
+
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Context</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+      @foreach (var ctx in Model.Contexts)
+      {
+        <tr>
+            <td>@ctx.Id</td>
+            @if (ctx.ContextText != null) 
+            {
+                if (ctx.ContextText.Length <= 50)
+                {
+                    <td>@Html.Raw(ctx.ContextText)</td>
+                }
+                else
+                {
+                    <td>@Html.Raw(ctx.ContextText.Substring(0, 50))</td>
+                }
+            }
+
+
+            <td class="text-center">
+                <button class="btn btn-primary" data-documentid="@ctx.Document_Id" data-contextid="@ctx.Id" onclick="EditContext(this)"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

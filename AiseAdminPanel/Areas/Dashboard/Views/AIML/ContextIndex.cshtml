@@ -1,0 +1,103 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.ContextModels
+
+@{
+    ViewBag.Title = "ContextIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<style>
+    #floatingTextarea {
+        height: 60px;
+    }
+
+        #floatingTextarea:focus {
+            height: 70px;
+        }
+</style>
+
+<div class="pagetitle">
+    <h1>Add / Edit Context</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Context</li>
+            <li class="breadcrumb-item active">Add/Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+
+    @using (Ajax.BeginForm("ContextIndex", "AIML", new AjaxOptions { OnSuccess = "OnSuccessContextInsertion", OnFailure = "OnFailedInsertion", LoadingElementId = "divLoader" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="alert alert-success" role="alert">
+                    <h5><b>Important Notice : </b></h5>
+                    <p>
+                        **Please write context for your chatbot carefully. Your paragraph should contain context or possible keywords which are related to questions asked by user.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    @Html.HiddenFor(x => x.Context.Id)
+                    <h5 class="card-title">Dataset Context</h5>
+
+                    <div class="alert alert-success" id="success-alert">
+                        <button type="button" class="close btn" data-dismiss="alert">x</button>
+                        <strong></strong><span></span>
+                    </div>
+                    <div class="alert alert-danger" id="error-alert">
+                        <button type="button" class="close btn" data-dismiss="alert">x</button>
+                        <strong>Error! </strong> <span> </span>
+                    </div>
+
+
+
+                    @Html.TextAreaFor(m => m.Context.ContextText, new { @class = "tinymce-editor", @id = "tinyEditor" })
+                </div>
+                <input type="submit" class="btn btn-success" />
+            </div>
+
+        </div>
+    }
+
+</section>
+
+<script>
+    function OnSuccessContextInsertion(responseText) {
+        OnSuccessInsertion(responseText, function () {
+            setTimeout(function () {
+                window.location.href ='@Url.Action("ManageContexts", "AIML")';
+            }, 3000);
+
+        });
+    }
+    @*function EditContext(obj) {
+        //tinyMCE.get("tinyEditor").getContent()
+        debugger;
+        var Url = '@Url.Action("ContextIndex", "AIML",new { ContextId="__id__"})';
+        Url = Url.replace("__id__", $(obj).data("contextid"));
+
+        $.ajax({
+            url: Url,
+            method: "GET",
+            success: function (result) {
+                debugger;
+                tinyMCE.activeEditor.setContent('<span>some</span> html');
+
+            }
+
+        })
+
+    }*@
+</script>
+

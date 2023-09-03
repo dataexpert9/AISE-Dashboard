@@ -1,0 +1,45 @@
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.UsersController.GetUser(Int32 UserId) in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\UsersController.cs:line 87
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.UsersController.GetUser(Int32 UserId) in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\UsersController.cs:line 87
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 97
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 97
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 97
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 97
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 97
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 135
+------******------
+
+MessageObject reference not set to an instance of an object.
+
+StackTrace   at BasketWebPanel.Areas.Dashboard.Controllers.AuctionsController.ManageAuctions() in F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\Areas\Dashboard\Controllers\AuctionsController.cs:line 135
+------******------

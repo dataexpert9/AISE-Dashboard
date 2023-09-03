@@ -1,0 +1,165 @@
+﻿@model BasketWebPanel.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_ExternalLayout.cshtml";
+}
+
+
+<main>
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <img src="assets/img/logo.png" alt="">
+                                <span class="d-none d-lg-block">AISE Admin</span>
+                            </a>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                                    <p class="text-center small">Enter your personal details to create account</p>
+                                </div>
+
+
+                                @using (Ajax.BeginForm("Register", "Account", null, new AjaxOptions { OnSuccess = "OnSuccessRegister", OnFailure = "OnFailedRegister", LoadingElementId = "divLoader" }, new { @class = "row g-3 needs-validation" }))
+                                {
+                                    @Html.AntiForgeryToken()
+
+
+                                    if (TempData["Message"] != null)
+                                    {
+                                        <div class="col-12">
+                                            @if (TempData["Success"] == "false")
+                                            {
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                    <strong>Error!</strong> @TempData["Message"]
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    <strong>Error!</strong> @TempData["Message"]
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>
+                                            }
+
+                                        </div>
+                                    }
+
+                                    <div class="col-12">
+                                        <label for="yourName" class="form-label">Your Name</label>
+                                        <div class="input-group has-validation">
+                                            @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control input-validation-error", @style = "", @placeholder = "Enter Your Full Name", @required = "required" })
+                                        </div>
+                                        @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger", style = "" })
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Your Email</label>
+                                        <div class="input-group has-validation">
+                                            @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-validation-error", @style = "", @placeholder = "Enter Your Email", @required = "required" })
+                                        </div>
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger", style = "" })
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="yourEmail" class="form-label">Your Username</label>
+                                        <div class="input-group has-validation">
+                                            @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control input-validation-error", @style = "", @placeholder = "Enter Your Username", @required = "required" })
+                                        </div>
+                                        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger", style = "" })
+                                    </div>
+
+
+
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label">Password</label>
+                                        <div class="input-group has-validation">
+                                            @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-validation-error", @style = "", @placeholder = "Enter Password", @required = "required" })
+                                        </div>
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger", style = "" })
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <label for="yourPassword" class="form-label">Confirm Password</label>
+                                        <div class="input-group has-validation">
+                                            @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-validation-error", @style = "", @placeholder = "Enter Confirm Password", @required = "required" })
+                                        </div>
+                                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger", style = "" })
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            @*<input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>*@
+                                            <label for="yourPassword" class="form-label">Terms & Conditions</label>
+
+                                            <div class="input-group has-validation">
+                                                @*<span class="input-group-text" id="inputGroupPrepend">@@</span>*@
+                                                @Html.CheckBoxFor(m => m.AgreeToConditions, new { @class = "input-validation-error", @required = "required" })
+                                            </div>
+                                            @Html.ValidationMessageFor(m => m.AgreeToConditions, "", new { @class = "text-danger", style = "" })
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button id="SubmitBtn" class="btn btn-primary w-100" type="submit">Create Account</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Already have an account? <a href="@Url.Action("Login","Account")">Log in</a></p>
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                            Designed by <a href="http://aivo.asia">AIVO ASIA</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- End #main -->
+
+    <script type='text/javascript'>
+        function OnSuccessRegister() {
+            debugger;
+        }
+        function OnFailedRegister(XMLHttpRequest, textStatus, errorThrown) {
+            debugger;
+            $("#alert-danger").show().delay(5000).fadeOut();
+        }
+
+        $(document).ready(function () {
+            if (@TempData["Success"]== "false") {
+                $("#SubmitBtn").attr("disabled", "disabled");
+            }
+        });
+
+
+    </script>

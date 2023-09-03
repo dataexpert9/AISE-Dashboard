@@ -1,0 +1,233 @@
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\csc.exe
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Collections.Immutable.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Reflection.Metadata.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\vbc.exe
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe.config
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll.config
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.pdb
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Elmah.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\FoolproofValidation.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Web.Infrastructure.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Owin.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\WebGrease.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.pdb
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.dll
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.pdb
+F:\VS\GitRepository\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\ZeedliAdminPanel.csprojResolveAssemblyReference.cache
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\csc.exe
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Collections.Immutable.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Reflection.Metadata.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\vbc.exe
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe.config
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll.config
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.pdb
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Elmah.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\FoolproofValidation.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Web.Infrastructure.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Owin.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\WebGrease.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.pdb
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\ZeedliAdminPanel.csprojResolveAssemblyReference.cache
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.dll
+F:\Projects\Zeedli\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.pdb
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\csc.exe
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\vbc.exe
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll.config
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\BasketWebPanel.pdb
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Elmah.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\FoolproofValidation.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Owin.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\WebGrease.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Net.Http.Formatting.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Http.WebHost.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Helpers.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Mvc.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Optimization.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.Razor.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\System.Web.WebPages.Razor.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Antlr3.Runtime.pdb
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Newtonsoft.Json.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\EntityFramework.SqlServer.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\ZeedliAdminPanel.csproj.AssemblyReference.cache
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\ZeedliAdminPanel.csproj.CoreCompileInputs.cache
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\ZeedliAdminPanel.csproj.CopyComplete
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.dll
+C:\Users\ACEMASTER\Desktop\OpenAI aivobot\AISE\ZeedliAdminPanel\ZeedliAdminPanel\obj\Debug\BasketWebPanel.pdb

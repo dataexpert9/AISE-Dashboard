@@ -1,0 +1,204 @@
+﻿@model BasketWebPanel.BindingModels.AuctionBindingModel
+@{
+    ViewBag.Title = "Auction";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="row">
+        <div class="alert alert-error" id="error-alert" hidden>
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>Error! </strong> <span> </span>
+        </div>
+        @using (Ajax.BeginForm("UpdateAuction", "Auctions", new AjaxOptions { OnSuccess = "OnSuccessAuctionUpdation", OnFailure = "OnFailedInsertion", LoadingElementId = "divLoader" }))
+        {
+            @Html.AntiForgeryToken()
+            <input id="auctionId" type="hidden" name="Id" value="@Model.Id" />
+            <div class="x_panel">
+                <div class="x_title">
+                    <h3 class="pull-left">Edit Auction</h3>
+                    <div class="pull-right">
+                        <button type="submit" id="btnSavePackage" class="btn btn-success"><i class="fa fa-plus-square"></i>  Save Auction</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group form-inline ">
+                                <label class="control-label" for="SearchStartDate" title="">Start Date Time</label>
+                                <div class='input-group date'>
+                                    <input type='text' class="form-control" id="dtpStartDateTime" value="@Model.StartDateTime" name="StartDateTime" />
+                                    <span class="input-group-addon open-datetimepicker3">
+                                        <span class="glyphicon glyphicon-calendar "></span>
+                                        <span class="glyphicon glyphicon-time "></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <div class="form-group form-inline ">
+                                <label class="control-label" for="SearchEndDate" title="">End Date Time</label>
+                                <div class='input-group date'>
+                                    <input type='text' class="form-control" id="dtpEndDateTime" value="@Model.EndDateTime" name="EndDateTime" />
+                                    <span class="input-group-addon open-datetimepicker4">
+                                        <span class="glyphicon glyphicon-calendar "></span>
+                                        <span class="glyphicon glyphicon-time "></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <label>Auction Price</label>
+                            @Html.TextBoxFor(x => x.AuctionPrice, new { @class = "form-control Price" })
+                            @Html.ValidationMessageFor(x => x.AuctionPrice, "", new { @class = "text-danger Price" })
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <label>Initial Bid</label>
+                            @Html.TextBoxFor(x => x.MinBidPrice, new { @class = "form-control Price" })
+                            @Html.ValidationMessageFor(x => x.MinBidPrice, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                            <label>Type</label>
+                            @Html.DropDownList("Type", new SelectList(Model.AuctionTypes.Items,
+"value", "Text", Model.AuctionTypes.SelectedValue), new { @class = "form-control Price" })
+                            @Html.ValidationMessageFor(x => x.Type, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="row col-md-12 col-sm-12 col-xs-12">
+                        <div id="accordion" role="tablist" class="row" aria-multiselectable="true" style="table-layout: auto; text-align:center">
+                            <div class="col-md-12">
+
+                                <table class="table table-striped table-bordered">
+                                    <tr style="background-color:#eee;">
+                                        <th style="vertical-align:middle; text-align:center">Product Id</th>
+                                        <th style="vertical-align:middle; text-align:center">Product Name</th>
+                                        <th style="vertical-align:middle; text-align:center">Image</th>
+                                        <th style="vertical-align:middle; text-align:center">Details</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="vertical-align:middle">@Model.Product.Id</td>
+                                        <td style="vertical-align:middle">@Model.Product.Name</td>
+                                        <td style="vertical-align:middle"><img src="@ApiCall.BaseUrl@Model.Product.ImageUrl" style="height:35px;width:100px; max-height:35px;max-width:100px" class="normal" /></td>
+                                        <td style="vertical-align:middle">
+                                            <button onclick="ProductDetails(this.id)" id="@Model.Product.Id" type="button" class="btn btn-link" aria-label="Left Align">
+                                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row col-md-12 col-sm-12 col-xs-12">
+                        <h4>Bids (@Model.Bids.Count)</h4>
+                        <div class="table-responsive" style="overflow-x:auto; overflow-y:hidden">
+                            <table id="datatable" class="table table-striped table-bordered" style="table-layout: auto; text-align:center;">
+                                <thead>
+
+                                    <tr style="background-color:#eee">
+                                        <th style="vertical-align:middle; text-align:center">Bid Id</th>
+                                        <th style="vertical-align:middle; text-align:center">User's FullName</th>
+                                        <th style="vertical-align:middle; text-align:center">User's Image</th>
+                                        <th style="vertical-align:middle; text-align:center">Bid Price</th>
+                                        <th style="vertical-align:middle; text-align:center">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Bids.Count; i++)
+                                    {
+                                        <tr>
+                                            <td style="vertical-align:middle">@Model.Bids[i].Id</td>
+                                            <td style="vertical-align:middle">@Model.Bids[i].User.FullName</td>
+                                            <td style="vertical-align:middle"><img src="@ApiCall.BaseUrl@Model.Bids[i].User.ProfilePictureUrl" style="height:35px;width:100px; max-height:35px;max-width:100px" class="normal" /></td>
+                                            <td style="vertical-align:middle">@Model.Bids[i].BidPrice</td>
+                                            <td style="vertical-align:middle">
+                                                <button onclick="UserDetails(this.id)" id="@Model.Bids[i].User_Id" type="button" class="btn btn-link" aria-label="Left Align">
+                                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+<script>
+    $(document).ready(function () {
+        $('#datatable').DataTable({
+            "pagingType": "full_numbers",
+            "columnDefs": [{
+                "targets": [2, 4],
+                "orderable": false
+            }
+            ]
+        });
+    });
+
+    $(".Price").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A, Command+A
+            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+    $("#Price").bind("cut copy paste", function (e) {
+        e.preventDefault();
+    });
+
+    function OnSuccessAuctionUpdation() {
+        window.location.href = "@Url.Action("ManageAuctions", "Auctions")";
+    }
+
+    $(function () {
+        $('#dtpStartDateTime,#dtpEndDateTime').daterangepicker({
+            singleDatePicker: true,
+            timePicker: true,
+            timePickerIncrement: 15,
+            locale: {
+                format: 'DD/MM/YYYY h:mm A'
+            },
+            showDropdowns: true
+        },
+            function (start, end, label) {
+                $("#hdnFromDate").val(start.format('DD-MM-YYYY h:mm A'))
+            });
+
+    });
+
+
+    function ProductDetails(productId) {
+        var url = '@Url.Action("Index", "Product", new { ProductId = "__id__" })';
+        window.location.href = url.replace('__id__', productId);
+    }
+
+    function UserDetails(userid) {
+        var url = '@Url.Action("GetUser", "Users", new { UserId = "__id__" })';
+        window.location.href = url.replace('__id__', userid);
+    }
+</script>

@@ -1,0 +1,266 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.PackageProductsViewModel
+<style>
+    .table caption + thead tr:first-child th,
+    .table colgroup + thead tr:first-child th,
+    .table thead:first-child tr:first-child th,
+    .table caption + thead tr:first-child td,
+    .table colgroup + thead tr:first-child td,
+    .table thead:first-child tr:first-child td {
+        border-top: 0;
+        text-align: center;
+    }
+</style>
+<table id="datatable" class="table table-striped table-bordered" style="table-layout: auto; text-align:center;">
+    <thead>
+        <tr>
+            <th width="20px"><input id="mastercheckbox" type="checkbox"></th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Initial Bid</th>
+            <th>Category Name</th>
+            <th>Product Image</th>
+            @*<th>Quantity</th>
+                <th style="display:none" width="0px">QuantityTemp</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Products.Count(); i++)
+        {
+            <tr>
+                <td style="vertical-align:middle" data-index="@i" id="@Model.Products[i].Id">@Html.CheckBoxFor(x => x.Products[i].IsChecked, new { @class = "checkBoxClass", @productId = Model.Products[i].Id, @index = i })</td>
+                <td style="vertical-align:middle">@Model.Products[i].Id @Html.HiddenFor(x => x.Products[i].Id)</td>
+                <td style="vertical-align:middle">@Model.Products[i].Name</td>
+                <td style="vertical-align:middle">@Html.TextBoxFor(x => x.Products[i].Price, new { @index = i, @class = "form-control priceBasket", @placeholder = "Auction Price", @type = "text" })</td>
+                <td style="vertical-align:middle">@Html.TextBoxFor(x => x.Products[i].Price, new { @index = i, @Id = "Products_" + @i + "__InitialBid", @class = "form-control priceBasket", @placeholder = "Initial Bid", @type = "text" })</td>
+                <td style="vertical-align:middle">@Model.Products[i].CategoryName</td>
+                <td style="vertical-align:middle"><img src="@ApiCall.BaseUrl@Model.Products[i].ImageUrl" style="height:35px;width:100px; max-height:35px;max-width:100px" class="normal" /></td>
+                @*<td style="overflow:hidden; vertical-align:middle ">
+                        <div class="center" style="text-align: -webkit-center; ">
+                            <div class="input-group" style="margin-top:10px; width:150px; ">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-number" disabled="disabled" style="margin-right:0px;" data-type="minus" data-field="@("Products["+i+"].Qty")">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                                <input type="text" data-val="true" class="form-control input-number" data-val-number="The field Qty must be a number." style="text-align:center" data-val-required="The Qty field is required." id="@("Products_"+i+"__Qty")" name="@("Products["+i+"].Qty")" value="@Model.Products[i].Qty" class="valid" min="1" max="10">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="@("Products["+i+"].Qty")">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="display:none">@Html.TextBoxFor(x => x.Products[i].QtyTemp, new { @class = "form-control", @type = "text" })</td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    var selectedProducts = [];
+    $(document).ready(function () {
+
+        selectedProducts = [];
+
+        if ($("#auctionId").val() > 0) {
+            var table = $('#datatable').DataTable({
+                "pagingType": "full_numbers",
+                "columnDefs": [{
+                    "targets": [0, 5],
+                    "orderable": false
+                }
+                ]
+            });
+        }
+        else {
+            var table = $('#datatable').DataTable({
+                "order": [[1, 'asc']],
+                "pagingType": "full_numbers",
+                "columnDefs": [{
+                    "targets": [0, 5],
+                    "orderable": false
+                }
+                ]
+            });
+        }
+
+
+        $('.input-number').change(function () {
+
+            minValue = parseInt($(this).attr('min'));
+            maxValue = parseInt($(this).attr('max'));
+            valueCurrent = parseInt($(this).val());
+            name = $(this).attr('name');
+            if (valueCurrent > minValue) {
+                $(".btn-number[data-type='minus'][data-field='" + name + "']").removeAttr('disabled')
+            }
+            else if (valueCurrent == minValue) {
+                $(".btn-number[data-type='minus'][data-field='" + name + "']").attr('disabled', true);
+            }
+            else {
+                alert('Sorry, the minimum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+
+            if (valueCurrent <= maxValue) {
+                $(".btn-number[data-type='plus'][data-field='" + name + "']").removeAttr('disabled')
+            }
+            else if (valueCurrent == maxValue) {
+                $(".btn-number[data-type='plus'][data-field='" + name + "']").attr('disabled', true);
+            }
+            else {
+                alert('Sorry, the maximum value was reached');
+                $(this).val($(this).data('oldValue'));
+            }
+
+
+        });
+
+        $('.input-number').trigger("change");
+
+        $("#mastercheckbox").click(function () {
+            var isChecked = this.checked;
+            $(':checkbox', table.rows().nodes()).prop('checked', isChecked);
+            selectedProducts = [];
+            table.rows().every(function (rowIdx, tableLoop, rowLoop) {
+
+                var chkBoxCell = table.cell(rowIdx, 0).node()
+                if (isChecked) {
+                    var productObj = {
+                        ProductId: $(chkBoxCell).attr("id"),
+                        ProductPrice: $('#Products_' + $(chkBoxCell).data("index") + '__Price').val(),
+                        MinBidPrice: $('#Products_' + $(chkBoxCell).data("index") + '__InitialBid').val()
+                    }
+
+                    selectedProducts.push(productObj)
+                }
+                else {
+                    selectedProducts = [];
+                }
+            });
+        });
+
+        $(".checkBoxClass").change(function () {
+            if (!$(this).prop("checked")) {
+                $("#mastercheckbox").prop("checked", false);
+            }
+        });
+
+        // In case you want to postback only selected ids
+        //wire up checkboxes.
+        $('#datatable').on('change', 'input[type=checkbox][id!=mastercheckbox]', function (e) {
+            var $check = $(this);
+            if ($check.is(":checked") == true) {
+
+                var checked = jQuery.inArray($check.val(), selectedProducts);
+
+
+                if (checked == -1) {
+
+                    //add id to selectedProducts.
+                    var productObj = {
+                        ProductId: $check.attr("productid"),
+                        ProductPrice: $('#Products_' + $check.attr("index") + '__Price').val(),
+                        MinBidPrice: $('#Products_' + $check.attr("index") + '__InitialBid').val()
+                    }
+
+                    selectedProducts.push(productObj);
+                }
+            } else {
+
+                selectedProducts = selectedProducts.filter(function (el) {
+                    return el.ProductId !== $check.attr("productid");
+                });
+
+            }
+        });
+    });
+
+    $('.btn-number').click(function (e) {
+        e.preventDefault();
+        fieldName = $(this).attr('data-field');
+        type = $(this).attr('data-type');
+        var input = $("input[name='" + fieldName + "']");
+        var currentVal = parseInt(input.val());
+        if (!isNaN(currentVal)) {
+            if (type == 'minus') {
+
+                if (currentVal > input.attr('min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('min')) {
+                    $(this).attr('disabled', true);
+                }
+
+            } else if (type == 'plus') {
+
+                if (currentVal < input.attr('max')) {
+                    input.val(currentVal + 1).change();
+                }
+                if (parseInt(input.val()) == input.attr('max')) {
+                    $(this).attr('disabled', true);
+                }
+
+            }
+        } else {
+            input.val(0);
+        }
+    });
+    $('.input-number').focusin(function () {
+        $(this).data('oldValue', $(this).val());
+    });
+
+
+
+    $(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+            // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+            // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+    $(".priceBasket").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+            // Allow: Ctrl+A, Command+A
+            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+            // Allow: home, end, left, right, down, up
+            (e.keyCode >= 35 && e.keyCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+    $(".priceBasket").on('input propertychange', function (e) {
+        var index = $(this).attr("index");
+        var ProductId = $("#Products_" + index + "__Id").val();
+        //remove from selectedorders
+        selectedProducts = selectedProducts.filter(function (el) {
+            return el.ProductId !== ProductId;
+        });
+
+        //add into selectedorder
+
+        var productObj = {
+            ProductId: ProductId,
+            ProductPrice: $('#Products_' + index + '__Price').val(),
+            MinBidPrice: $('#Products_' + index + '__InitialBid').val()
+        }
+
+        selectedProducts.push(productObj);
+    });
+</script>

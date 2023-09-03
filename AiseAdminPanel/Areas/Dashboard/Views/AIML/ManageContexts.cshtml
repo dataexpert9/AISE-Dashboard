@@ -1,0 +1,182 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.ContextViewModel
+@{
+    ViewBag.Title = "ManageContexts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    #floatingTextarea {
+        height: 60px;
+    }
+
+        #floatingTextarea:focus {
+            height: 70px;
+        }
+</style>
+
+<div class="pagetitle">
+    <h1>Manage Context</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Context</li>
+            <li class="breadcrumb-item active">Manage</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table id="DataTable" class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Context</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var ctx in Model.Contexts)
+                            {
+                                <tr>
+                                    <td>@ctx.Id</td>
+                                    @if (ctx.ContextText != null)
+                                    {
+                                        if (ctx.ContextText.Length <= 50)
+                                        {
+                                            <td>@Html.Raw(ctx.ContextText)</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@Html.Raw(ctx.ContextText.Substring(0, 150)) ...</td>
+                                        }
+                                    }
+
+
+                                    <td class="text-center">
+                                        <button class="btn btn-primary" data-contextid="@ctx.Id" onclick="EditContext(this)"><i class="bi bi-pencil-square"></i></button>
+                                        <button class="btn btn-danger deleteButtons"  data-bs-toggle="modal" data-bs-target="#deleteModal" data-contextid="@ctx.Id"><i class="bi bi-trash-fill"></i></button>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <input type="hidden" id="contextid" value="" />
+
+                <button type="button" id="btnDeleteClose" class="close" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>Are you sure you want to delete this Context?</div>
+                <label id="lblErrorOnDelete" hidden class="text-danger"></label>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" id="btnDeleteYes" class="btn btn-success"><span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Yes</button>
+                <button type="button" id="btnDeleteNo" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>&nbsp;No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+    });
+
+
+     function EditContext(obj) {
+        //tinyMCE.get("tinyEditor").getContent()
+        
+        var Url = '@Url.Action("ContextIndex", "AIML",new { ContextId="__id__"})';
+        Url = Url.replace("__id__", $(obj).data("contextid"));
+
+         window.location.href = Url;
+
+        //$.ajax({
+        //    url: Url,
+        //    method: "GET",
+        //    success: function (result) {
+        //        debugger;
+        //        tinyMCE.activeEditor.setContent('<span>some</span> html');
+
+        //    }
+
+        //})
+
+    }
+    $(document).on("click", ".deleteButtons", function () {
+        var contextid = $(this).data('contextid');
+        $("#contextid").val(contextid);
+    });
+
+    $('#btnDeleteNo').on("click", function (e) {
+        $('#deleteModal').modal('hide');
+        var lblError = $("#lblErrorOnDelete");
+        lblError.text("");
+        lblError.hide();
+    });
+
+    $('#btnDeleteClose').on("click", function (e) {
+
+        $('#deleteModal').modal('hide');
+        var lblError = $("#lblErrorOnDelete");
+        lblError.text("");
+        lblError.hide();
+    });
+
+    $('#btnDeleteYes').on("click", function (e) {
+        var ContextId = $("#contextid").val();
+        var url = '@Url.Action("DeleteContext", "AIML")';
+        var lblError = $("#lblErrorOnDelete");
+        $.get(url, { ContextId: ContextId }, function (data) {
+            if (data.responseText == "Success") {
+                $('#deleteModal').modal('hide');
+                $(".modal-backdrop").fadeOut('slow', function () {
+                    if (datatable != undefined) {
+                        var rowIndex = null;
+                        var indexes = datatable.rows().eq(0).filter(function (rowIdx) {
+                            rowIndex = rowIdx;
+                            return datatable.cell(rowIdx, 0).data() === ContextId ? true : false;
+                        });
+                        if (rowIndex != null)
+                            datatable.rows(rowIndex).remove().draw(false);
+
+                        datatable.rows(indexes).remove().draw(false);
+                    }
+                });
+                lblError.text("");
+                lblError.hide();
+
+            }
+            else {
+                lblError.text(data);
+                lblError.show();
+            }
+        });
+        $("#deleteModal").modal('hide');
+    });
+
+    function showDeleteModal() {
+        $("#deleteModal").modal('show');
+    }
+    function hideDeleteModal() {
+        $("#deleteModal").modal('hide');
+    }
+</script>

@@ -1,0 +1,52 @@
+﻿@model BasketWebPanel.ViewModels.GeneralSettingsViewModel
+@{
+    ViewBag.Title = "GeneralSettings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="right_col" role="main">
+    @using (Ajax.BeginForm("GeneralSettings", "Settings", new AjaxOptions { OnSuccess = "OnSuccessGeneralSettingsInsertion", OnFailure = "OnFailedInsertion", LoadingElementId = "divLoader" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="x_panel ">
+                <div class="alert alert-success" id="success-alert" hidden>
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    <strong></strong><span>Settings updated successfully!</span>
+                </div>
+                <div class="x_title">
+                    <h3 class="pull-left">General Settings</h3>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-plus-square"></i>  Save</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <p>
+                </p>
+                <div class="x_content">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-5" style="text-align:right; ">
+                                <label class="control-label" for="">Bid Auto Increment Amount</label>
+                                <span class="ico-help" title="The bids will be auto incremented by this threshold."><i class="fa fa-question-circle"></i></span>
+                            </div>
+                            <div class="col-md-4 col-xs-6">
+                                @Html.TextBoxFor(x=>x.AutoIncrementBidAmount, new { @class = "form-control"})
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    function OnSuccessGeneralSettingsInsertion() {
+         $("#success-alert").fadeTo(2000, 500).slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+        });
+    }
+</script>

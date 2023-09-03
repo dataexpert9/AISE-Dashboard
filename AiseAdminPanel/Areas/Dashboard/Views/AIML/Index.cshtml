@@ -1,0 +1,118 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.DocumentModels
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    #floatingTextarea {
+        height: 60px;
+    }
+
+        #floatingTextarea:focus {
+            height: 70px;
+        }
+</style>
+
+<div class="pagetitle">
+    <h1>Add / Edit Document</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Document</li>
+            <li class="breadcrumb-item active">Add/Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Excel File</h5>
+
+
+                <div class="alert alert-success" id="success-alert">
+                    <button type="button" class="close btn" data-dismiss="alert">x</button>
+                    <strong></strong><span></span>
+                </div>
+                <div class="alert alert-danger" id="error-alert">
+                    <button type="button" class="close btn" data-dismiss="alert">x</button>
+                    <strong>Error! </strong> <span> </span>
+                </div>
+
+
+                @using (Ajax.BeginForm("Index", "AIML", new AjaxOptions { OnSuccess = "OnSuccessInsertionCustom({callback:ManageDocuments})", OnFailure = "OnFailedInsertion", LoadingElementId = "divLoader" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(x => x.Id)
+                    <div class="mb-3">
+                        <label for="documentName" class="form-label">Document Title / Name : </label>
+                        @Html.TextBoxFor(x => x.Title, new { @autofocus = "", @class = "form-control", id = "documentName", @placeholder = "Enter Document Title / Name",@required="required" })
+                        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success" />
+                        <input type="button" value="Reset" onclick="Reset('form0')" class="btn btn-warning" />
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Document Form</h5>
+                <div id="ManageDocumentContainer">
+                    @{
+                        Html.RenderAction("ManageDocuments", "AIML", new { UserId = Model.UserId });
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+<script>
+
+    function RedirectToDocument(docid) {
+        var Url = "@Url.Action("ContextIndex","AIML",new { DocumentId = "__id__" })";
+        Url = Url.replace("__id__", docid);
+
+        window.location = Url;
+    }
+    function ManageDocuments() {
+
+        var Url = "@Url.Action("ManageDocuments", "AIML",new {UserId="__id__" })";
+        Url = Url.replace("__id__",@Model.UserId);
+
+        $.ajax({
+            url: Url
+        }).done(function (data) {
+            $("#ManageDocumentContainer").html(data);
+            datatable = $('#DataTable').DataTable();
+        });
+
+        //$.get(Url, function (data, status) {
+        //    if (status == "success") {
+        //        $("#ManageDocumentContainer").replaceWith(data);
+        //    }
+        //});
+
+
+    }
+    function Reset() {
+        $("#form0").trigger("reset");
+        $("#Id").val(0);
+    }
+
+    function EditDocument(obj) {
+        $("#Id").val($(obj).data("docid"));
+        $("#documentName").val($(obj).data("title"));
+    }
+</script>

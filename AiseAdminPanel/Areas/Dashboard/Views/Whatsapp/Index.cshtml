@@ -1,0 +1,250 @@
+﻿@model BasketWebPanel.Areas.Dashboard.Models.WhatsappFileUploadBindingModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #floatingTextarea {
+        height: 60px;
+    }
+
+        #floatingTextarea:focus {
+            height: 70px;
+        }
+
+
+    #ImageDiv {
+        text-align: center;
+        padding: 3%;
+        border: thin solid black;
+        width: 100%;
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    #ImageLabel {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+    }
+
+    #imageName {
+        color: green;
+    }
+</style>
+
+<div class="pagetitle">
+    <h1>Add / Edit Context</h1>
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Context</li>
+            <li class="breadcrumb-item active">Add/Edit</li>
+        </ol>
+    </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success" id="success-alert">
+                <button type="button" class="close btn btn-default" onclick="ClearFileForm()" data-dismiss="alert">x</button>
+                <strong></strong><span>@TempData["SuccessMessage"]</span>
+            </div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger" id="error-alert" style="display:block;">
+                <button type="button" class="close btn btn-default" onclick="ClearFileForm()" data-dismiss="alert">x</button>
+                <strong>Error! </strong> <span> @TempData["ErrorMessage"]</span>
+            </div>
+        }
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                @*@using (Ajax.BeginForm("Index", "Whatsapp", new AjaxOptions { OnSuccess = "OnSuccessInsertion", OnFailure = "OnFailedInsertion", LoadingElementId = "divLoader" }))*@
+                @using (Html.BeginForm("Index", "Whatsapp", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5 class="card-title">Document Form</h5>
+                                </div>
+
+                                <div class="col-md-6 mt-3">
+                                    <a class="btn btn-outline-primary float-end" href="@Url.Action("DownloadSample", "Whatsapp")">Download Sample Document</a>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-md-12 col-xs-12">
+                                    <div id="UploadImage">
+                                        <label>Upload Profile Image</label>
+                                        <div class="input-group image-preview" style="margin-bottom:0px">
+                                            <!--<input type="text" class="form-control image-preview-filename" name="FileUrl" id="txtImageUrl" readonly hidden>--> <!-- don't give a name === doesn't send on POST/GET -->
+                                            <!--<span class="input-group-btn">-->
+                                            <!-- image-preview-clear button -->
+                                            <!--<button type="button" id="clearImage" class="btn btn-default image-preview-clear" onclick="ClearImage()" style="display:none;">
+                                                <span class="glyphicon glyphicon-remove"></span> Clear
+                                            </button>-->
+                                            <!-- image-preview-input -->
+                                            @*<div class="btn btn-default image-preview-input">
+                                                    <span class="glyphicon glyphicon-folder-open"></span>
+                                                    <span class="image-preview-input-title">Browse</span>
+                                                    <label for="file-upload" class="custom-file-upload">
+                                                        <i class="fi ri-file-cloud-fill"></i> Custom Upload
+                                                    </label>
+                                                    <input id="file-upload" type="file" accept="image/png, image/jpeg, image/gif" onchange="UploadImage()" id="fileInput" name="Image" />
+
+
+
+                                                </div>*@
+                                            @*</span>*@
+
+                                            <div id="ImageDiv">
+                                                <label id="ImageLabel" for="inputTag">
+                                                    Select File <br />
+                                                    <i class="bi bi-cloud-upload-fill"></i>
+                                                    @*<input id="inputTag" name="FileUrl" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />*@
+                                                    @Html.TextBoxFor(m => m.File, new { id = "inputTag", type = "file", accept = ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" })
+
+                                                    <br />
+                                                    <span id="imageName"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        @*@Html.ValidationMessageFor(m => m.FileUrl, "", new { @class = "text-danger", @Id = "errImageUrl" })*@
+                                        <!-- /input-group image-preview [TO HERE]-->
+                                    </div>
+                                    <div hidden id="HasImage1">@Model.FileUrl</div>
+
+                                </div>
+                                <span style="padding-left:10px" id="ImageError" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 col-sm-12 col-xs-12 text-right" style="margin-top:20px;">
+                                    <button id="btnReset" onclick="ClearFileForm()" class="btn btn-primary" type="reset">Reset</button>
+                                    <button type="submit" @*onclick="UploadImage()"*@ class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    let input = document.getElementById("inputTag");
+    let imageName = document.getElementById("imageName")
+
+    input.addEventListener("change", () => {
+        let inputImage = document.querySelector("input[type=file]").files[0];
+
+        imageName.innerText = inputImage.name;
+    });
+
+    function ClearFileForm() {
+        $("#imageName").html("");
+        $("#inputTag").val('');
+        $("#error-alert").hide();
+        $("#success-alert").hide();
+    }
+
+    function DownloadSampleFile() {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("DownloadSample", "Whatsapp")',
+            contentType: "application/json; charset=utf-8",
+            success: function (r) {
+                debugger;
+
+                //Convert Base64 string to Byte Array.
+                var bytes = Base64ToBytes(r);
+
+                //Convert Byte Array to BLOB.
+                var blob = new Blob([bytes], { type: "application/octetstream" });
+
+                //Check the Browser type and download the File.
+                var isIE = false || !!document.documentMode;
+                if (isIE) {
+                    window.navigator.msSaveBlob(blob, fileName);
+                } else {
+                    var url = window.URL || window.webkitURL;
+                    link = url.createObjectURL(blob);
+                    var a = $("<a />");
+                    a.attr("download", fileName);
+                    a.attr("href", link);
+                    $("body").append(a);
+                    a[0].click();
+                    $("body").remove(a);
+                }
+            }
+        });
+    };
+    function Base64ToBytes(base64) {
+        var s = window.atob(base64);
+        var bytes = new Uint8Array(s.length);
+        for (var i = 0; i < s.length; i++) {
+            bytes[i] = s.charCodeAt(i);
+        }
+        return bytes;
+    };
+    function OnSuccessContextInsertion(responseText) {
+        OnSuccessInsertion(responseText, function () {
+            setTimeout(function () {
+                window.location.href ='@Url.Action("ManageContexts", "AIML")';
+            }, 3000);
+
+        });
+    }
+
+
+    function UploadImage() {
+        debugger;
+        var AllowedFileTypes = [".csv", "application / vnd.openxmlformats - officedocument.spreadsheetml.sheet", "application / vnd.ms - excel","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"];
+        var formdata = new FormData(); //FormData object
+        var fileInput = document.getElementById('inputTag');
+        //Iterating through each files selected in fileInput
+        var file = fileInput.files[0];
+        formdata.append(file.name, file);
+        if (AllowedFileTypes.indexOf(file.type) == -1) {
+            $("#ImageError").text("Only CSV or Excel files are allowed.");
+            //$("#clearImage").trigger("click");
+            return false;
+        }
+        else {
+            $("#ImageError").text("");
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'Whatsapp/Index');
+            xhr.send(formdata);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("errImageUrl").innerHTML = '';
+                }
+            }
+            return false;
+        }
+    }
+</script>
+
+
